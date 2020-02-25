@@ -1,4 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Gypsy--Bookstore
+
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* It is a project targeted at building a bookstore using React but maintaining state using Redux. 
+* As the project progresses,this Read-me will be updated.
+
+## Live Link
+The live link of this project can be found [here](https://gypsy-bookstore.herokuapp.com/)
 
 ## Available Scripts
 
