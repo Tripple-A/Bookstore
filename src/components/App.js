@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BooksList from '../containers/bookslist';
 import BooksForm from '../containers/booksform';
-import { createStore } from 'redux';
 
 
 class App extends Component {
@@ -9,7 +8,7 @@ class App extends Component {
         return (
             <div>
                 <BooksList />
-               
+                <BooksForm />
             </div>
         )
     }
