@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Book from '../components/Book';
-
 
 const mapStateToProps = state => ({ books: state.BookReducer });
 
@@ -23,5 +23,8 @@ const BooksList = ({ books }) => (
   </div>
 );
 
+BooksList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default connect(mapStateToProps, null)(BooksList);
