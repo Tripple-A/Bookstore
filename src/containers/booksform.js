@@ -1,35 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const BooksForm = () => {
-  const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+class BooksForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      category: '',
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleCategory = this.handleCategory.bind(this);
+  }
 
-  return (
-    <form>
-      <label htmlFor="booktitle">
+  handleChange(e) {
+    this.setState({ title: e.target.value });
+  }
+
+  handleCategory(e) {
+    this.setState({ category: e.target.value });
+  }
+
+  render() {
+    const categories = ['', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+    const { title } = this.state;
+    const { category } = this.state;
+    return (
+      <form>
+        <label htmlFor="booktitle">
+          {' '}
+          Book Title:
+          <input type="text" name="booktitle" id="booktitle" value={title} onChange={this.handleChange} />
+        </label>
+
         {' '}
-        Book Title:
-        <input type="text" name="booktitle" id="booktitle" />
-      </label>
-
-      {' '}
-      <br />
-      <label htmlFor="cat">
-        {' '}
-        Category:
-        <select name="cat">
-          {categories.map(cat => (
-            <option key={cat} value={cat}>
-              {' '}
-              {cat}
-              {' '}
-            </option>
-          ))}
-        </select>
-      </label>
-      <br />
-      <button type="button">Add Book</button>
-    </form>
-  );
-};
+        <br />
+        <label htmlFor="cat">
+          {' '}
+          Category:
+          <select name="cat" value={category} onChange={this.handleCategory}>
+            {categories.map(cat => (
+              <option key={cat} value={cat}>
+                {' '}
+                {cat}
+                {' '}
+              </option>
+            ))}
+          </select>
+        </label>
+        <br />
+        <button type="button">Add Book</button>
+      </form>
+    );
+  }
+}
 
 export default BooksForm;
