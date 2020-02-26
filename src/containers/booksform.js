@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { CREATEBOOK } from '../actions';
+
+const mapDispatchToProps = dispatch => ({
+  addBook: book => dispatch(CREATEBOOK(book)),
+});
 
 class BooksForm extends Component {
   constructor(props) {
@@ -9,6 +16,7 @@ class BooksForm extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleCategory = this.handleCategory.bind(this);
+    this.handleAddBook = this.handleAddBook.bind(this);
   }
 
   handleChange(e) {
@@ -17,6 +25,18 @@ class BooksForm extends Component {
 
   handleCategory(e) {
     this.setState({ category: e.target.value });
+  }
+
+  handleAddBook() {
+    const { title, category } = this.state;
+    const { addBook } = this.props;
+    const book = {
+      id: 3,
+      title,
+      category,
+    };
+    addBook(book);
+    this.setState({ title: '', category: '' });
   }
 
   render() {
@@ -47,10 +67,14 @@ class BooksForm extends Component {
           </select>
         </label>
         <br />
-        <button type="button">Add Book</button>
+        <button type="button" onClick={this.handleAddBook}>Add Book</button>
       </form>
     );
   }
 }
 
-export default BooksForm;
+BooksForm.propTypes = {
+  addBook: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(BooksForm);
