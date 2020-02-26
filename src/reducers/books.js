@@ -1,5 +1,5 @@
-
-const list = [{ id: 1, title: 'Java', category: 'sci-fi' }, { id: 2, title: 'Scripting', category: 'history' }];
+const randomNum = () => Math.floor(Math.random() * 10);
+const list = [{ id: randomNum(), title: 'Java', category: 'sci-fi' }, { id: randomNum(), title: 'Scripting', category: 'history' }];
 
 const bookReducer = (state = list, action) => {
   switch (action.type) {
