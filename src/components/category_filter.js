@@ -1,3 +1,5 @@
+import React from 'react';
+
 const categories = ['ALL', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
 const CategoryFilter = () => (
@@ -16,4 +18,6 @@ const CategoryFilter = () => (
           </select>
         </label>
     </div>
-)
+);
+
+export default CategoryFilter;
