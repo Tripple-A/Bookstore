@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
 
-const mapStateToProps = state => ({ books: state.BookReducer });
+const mapStateToProps = state => ({ books: state.books });
 
 const BooksList = ({ books }) => (
   <div>
