@@ -1,7 +1,7 @@
 const randomNum = () => Math.floor(Math.random() * 100);
 const list = [{ id: randomNum(), title: 'Java', category: 'sci-fi' }, { id: randomNum(), title: 'Scripting', category: 'history' }];
 
-const bookReducer = (state = list, action) => {
+const books = (state = list, action) => {
   switch (action.type) {
     case 'CREATE BOOK':
       return [...state, action.book];
@@ -12,4 +12,4 @@ const bookReducer = (state = list, action) => {
   }
 };
 
-export default bookReducer;
+export default books;
