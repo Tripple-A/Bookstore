@@ -31,7 +31,7 @@ class BooksForm extends Component {
     const { title, category } = this.state;
     const { addBook } = this.props;
     const book = {
-      id: 3,
+      id: Math.floor(Math.random() * 100),
       title,
       category,
     };

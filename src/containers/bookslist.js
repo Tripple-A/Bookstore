@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 
+
 const mapStateToProps = state => ({ books: state.BookReducer });
 
 const BooksList = ({ books }) => (
@@ -13,6 +14,7 @@ const BooksList = ({ books }) => (
           <th> BOOK ID</th>
           <th>TITLE</th>
           <th>CATEGORY</th>
+          <th>DELETE BOOK</th>
         </tr>
       </thead>
       <tbody>
