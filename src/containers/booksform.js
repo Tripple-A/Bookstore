@@ -35,8 +35,7 @@ class BooksForm extends Component {
       title,
       category,
     };
-    addBook(book);
-    this.setState({ title: '', category: '' });
+    if (title !== '' && category !== '') { addBook(book); this.setState({ title: '', category: '' }); }
   }
 
   render() {

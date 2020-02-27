@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { REMOVEBOOK } from '../actions';
 
 const mapDispatchToProps = dispatch => ({
-  removeBook: book => { dispatch(REMOVEBOOK(book)); },
+  handleRemoveBook: book => { dispatch(REMOVEBOOK(book)); },
 });
 
-const Book = ({ book, removeBook }) => (
+const Book = ({ book, handleRemoveBook }) => (
 
 
   <tr>
@@ -28,7 +28,7 @@ const Book = ({ book, removeBook }) => (
     </td>
     <td>
       {' '}
-      <button type="button" onClick={() => removeBook(book)}>REMOVE BOOK</button>
+      <button type="button" onClick={() => handleRemoveBook(book)}>REMOVE BOOK</button>
     </td>
   </tr>
 );
@@ -39,7 +39,7 @@ Book.propTypes = {
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
-  removeBook: PropTypes.func.isRequired,
+  handleRemoveBook: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(Book);
