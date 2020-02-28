@@ -45,34 +45,34 @@ class BooksForm extends Component {
     return (
       <div className="addForm">
         <div className="title">ADD NEW BOOK</div>
- <form>
-        <label htmlFor="booktitle">
-          {' '}
-          
-          <input placeholder="Book Title" className="Book-Title" type="text" name="booktitle" id="booktitle" value={title} onChange={this.handleChange} />
-        </label>
+        <form>
+          <label htmlFor="booktitle">
+            {' '}
 
-        {' '}
-        
-        <label htmlFor="cat">
+            <input placeholder="Book Title" className="Book-Title" type="text" name="booktitle" id="booktitle" value={title} onChange={this.handleChange} />
+          </label>
+
           {' '}
-          
-          <select placeholder="Category" className="Book-Category" name="cat" value={category} onChange={this.handleCategory}>
-            <option className="cat" key='hey' value="">Category</option>
-            {categories.map(cat => (
-              <option key={cat} value={cat}>
-                {' '}
-                {cat}
-                {' '}
-              </option>
-            ))}
-          </select>
-        </label>
-        
-        <button className="Add-Button" type="button" onClick={this.handleAddBook}>Add Book</button>
-      </form>
+
+          <label htmlFor="cat">
+            {' '}
+
+            <select placeholder="Category" className="Book-Category" name="cat" value={category} onChange={this.handleCategory}>
+              <option className="cat" key="hey" value="">Category</option>
+              {categories.map(cat => (
+                <option key={cat} value={cat}>
+                  {' '}
+                  {cat}
+                  {' '}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <button className="Add-Button" type="button" onClick={this.handleAddBook}>Add Book</button>
+        </form>
       </div>
-     
+
     );
   }
 }

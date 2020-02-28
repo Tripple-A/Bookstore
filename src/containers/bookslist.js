@@ -16,12 +16,11 @@ const showbooks = (books, filter) => {
 const BooksList = ({ books, filter }) => (
   <div>
     <CategoryFilter />
-    
-      
-        {showbooks(books, filter).map(b => <Book key={b.title} book={b} />)}
-      
 
-    
+
+    {showbooks(books, filter).map(b => <Book key={b.title} book={b} />)}
+
+
   </div>
 );
 
