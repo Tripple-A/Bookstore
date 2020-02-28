@@ -9,28 +9,19 @@ const mapDispatchToProps = dispatch => ({
 
 const Book = ({ book, handleRemoveBook }) => (
 
+  <div className="book">
+    <div>
+      <div className="bookCat">{book.category}</div>
+      <div className="bookName">{book.title}</div>
+      <div className="bookAuthor">
+        {book.author}
+        {' '}
+      </div>
+    </div>
 
-  <tr>
-    <td>
-      {' '}
-      {book.id}
-      {' '}
-    </td>
-    <td>
-      {' '}
-      {book.title}
-      {' '}
-    </td>
-    <td>
-      {' '}
-      {book.category}
-      {' '}
-    </td>
-    <td>
-      {' '}
-      <button type="button" onClick={() => handleRemoveBook(book)}>REMOVE BOOK</button>
-    </td>
-  </tr>
+    <button className="removeBook" type="button" onClick={() => handleRemoveBook(book)}>REMOVE BOOK</button>
+  </div>
+
 );
 
 Book.propTypes = {
@@ -38,6 +29,7 @@ Book.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
   }).isRequired,
   handleRemoveBook: PropTypes.func.isRequired,
 };

@@ -39,35 +39,40 @@ class BooksForm extends Component {
   }
 
   render() {
-    const categories = ['', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+    const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const { title } = this.state;
     const { category } = this.state;
     return (
-      <form>
-        <label htmlFor="booktitle">
-          {' '}
-          Book Title:
-          <input type="text" name="booktitle" id="booktitle" value={title} onChange={this.handleChange} />
-        </label>
+      <div className="addForm">
+        <div className="title">ADD NEW BOOK</div>
+        <form>
+          <label htmlFor="booktitle">
+            {' '}
 
-        {' '}
-        <br />
-        <label htmlFor="cat">
+            <input placeholder="Book Title" className="Book-Title" type="text" name="booktitle" id="booktitle" value={title} onChange={this.handleChange} />
+          </label>
+
           {' '}
-          Category:
-          <select name="cat" value={category} onChange={this.handleCategory}>
-            {categories.map(cat => (
-              <option key={cat} value={cat}>
-                {' '}
-                {cat}
-                {' '}
-              </option>
-            ))}
-          </select>
-        </label>
-        <br />
-        <button type="button" onClick={this.handleAddBook}>Add Book</button>
-      </form>
+
+          <label htmlFor="cat">
+            {' '}
+
+            <select placeholder="Category" className="Book-Category" name="cat" value={category} onChange={this.handleCategory}>
+              <option className="cat" key="hey" value="">Category</option>
+              {categories.map(cat => (
+                <option key={cat} value={cat}>
+                  {' '}
+                  {cat}
+                  {' '}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <button className="Add-Button" type="button" onClick={this.handleAddBook}>Add Book</button>
+        </form>
+      </div>
+
     );
   }
 }

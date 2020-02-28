@@ -10,11 +10,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const CategoryFilter = ({ handleFilterChange }) => (
-  <div>
+  <div className="views">
     <label htmlFor="cat">
       {' '}
-      View Movies By Category:
-      <select name="cat" onChange={e => handleFilterChange(e.target.value)}>
+      Filter Available Views By Category:
+      <select name="cat" className="filters" onChange={e => handleFilterChange(e.target.value)}>
         {categories.map(cat => (
           <option key={cat} value={cat}>
             {' '}
