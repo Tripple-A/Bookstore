@@ -39,23 +39,26 @@ class BooksForm extends Component {
   }
 
   render() {
-    const categories = ['', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+    const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const { title } = this.state;
     const { category } = this.state;
     return (
-      <form>
+      <div className="addForm">
+        <div className="title">ADD NEW BOOK</div>
+ <form>
         <label htmlFor="booktitle">
           {' '}
-          Book Title:
-          <input type="text" name="booktitle" id="booktitle" value={title} onChange={this.handleChange} />
+          
+          <input placeholder="Book Title" className="Book-Title" type="text" name="booktitle" id="booktitle" value={title} onChange={this.handleChange} />
         </label>
 
         {' '}
-        <br />
+        
         <label htmlFor="cat">
           {' '}
-          Category:
-          <select name="cat" value={category} onChange={this.handleCategory}>
+          
+          <select placeholder="Category" className="Book-Category" name="cat" value={category} onChange={this.handleCategory}>
+            <option className="cat" key='hey' value="">Category</option>
             {categories.map(cat => (
               <option key={cat} value={cat}>
                 {' '}
@@ -65,9 +68,11 @@ class BooksForm extends Component {
             ))}
           </select>
         </label>
-        <br />
-        <button type="button" onClick={this.handleAddBook}>Add Book</button>
+        
+        <button className="Add-Button" type="button" onClick={this.handleAddBook}>Add Book</button>
       </form>
+      </div>
+     
     );
   }
 }
